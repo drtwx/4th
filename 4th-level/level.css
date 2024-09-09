@@ -1,0 +1,117 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #96c2fc;
+    color: #0247ad;
+    line-height: 1.6;
+}
+
+header.cabeçalho {
+    text-align: center;
+    margin: 0;
+}
+
+/* Grid layout para o estilo "xadrez" */
+main.level {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Seção "Quem somos" */
+.quem {
+    grid-column: 1 / 2;  /* Ocupa a primeira coluna */
+    grid-row: 1;  /* Primeira linha */
+    text-align: left;
+}
+
+.quem img {
+    grid-column: 2 / 3;  /* Ocupa a segunda coluna */
+    grid-row: 1;  /* Primeira linha */
+    width: 100%;
+    max-width: 400px;
+    align-self: center;
+}
+
+/* Seção "Como faremos" */
+.como-faremos {
+    grid-column: 2 / 3;  /* Ocupa a segunda coluna */
+    grid-row: 2;  /* Segunda linha */
+    text-align: left;
+}
+
+p{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+h1{
+    text-shadow: 0px 4px 5px rgb(0, 0, 0, 0.3);
+}
+
+.como-faremos img {
+    grid-column: 1 / 2;  /* Ocupa a primeira coluna */
+    grid-row: 2;  /* Segunda linha */
+    width: 100%;
+    max-width: 400px;
+    align-self: center;
+}
+
+/* Rodapé e Ícones sociais */
+footer {
+    background-color: #dddddd;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer h2 {
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icons a {
+    color: #333;
+    font-size: 30px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.icons a:hover {
+    color: #007bff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main.level {
+        grid-template-columns: 1fr; /* Se adapta a apenas uma coluna em telas menores */
+        grid-template-rows: auto auto auto auto;
+    }
+    
+    .quem, .quem img, .como-faremos, .como-faremos img {
+        grid-column: 1;  /* Todos ocupam a mesma coluna */
+        grid-row: auto;
+        text-align: center;
+    }
+
+    .quem img, .como-faremos img {
+        max-width: 100%; /* As imagens ocupam toda a largura disponível em telas pequenas */
+    }
+}
